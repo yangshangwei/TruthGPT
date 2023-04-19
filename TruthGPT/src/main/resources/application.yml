@@ -1,0 +1,32 @@
+
+server:
+  port: 8888
+
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+    cache: true
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    request-context-attribute: request
+
+logging:
+  file:
+    name: gpt.log
+  level:
+    ROOT: INFO
+  logback:
+    rolling policy:
+      max-history: 30
+      clean-history-on-start: true
+      max-file-size: 100MB
+
+
+softwareVersion: 3.6.6.0
+checkProxy: true
+openAIChatGPTURL: https://api.openai.com/v1/chat/completions
+openAICreateImageURL: https://api.openai.com/v1/images/generations
+openAIChatModel: gpt-3.5-turbo
+maxClient: 10
